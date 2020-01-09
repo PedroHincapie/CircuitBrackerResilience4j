@@ -85,3 +85,4 @@ task moveBootExplodedLib() {
 	}
 }
 moveBootExplodedLib.dependsOn unzipBoot
+build.finalizedBy(moveBootExplodedLib)
