@@ -4,8 +4,15 @@ plugins {
 	id 'java'
 	id 'com.google.cloud.tools.jib' version '1.8.0'
 }
-
-jib.to.image = 'gcr.io/inf-5065/circuitbreacker'
+jib {
+	to {
+		image = 'gcr.io/inf-5065/circuitbreacker'
+		auth {
+			username = '_json_key'
+			password = file('cuentaServicioSifaPoCCeiba.json').text
+		}
+	}
+}
 
 group = 'com.poc'
 version = '0.0.1-SNAPSHOT'
